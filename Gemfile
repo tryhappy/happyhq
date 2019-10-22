@@ -27,6 +27,8 @@ gem 'sorcery'
 
 gem 'shopify_api'
 
+gem 'sidekiq'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
