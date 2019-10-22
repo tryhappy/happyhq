@@ -5,13 +5,11 @@
 </p>
 
 <p>
-  <strong>Crypted password:</strong>
-  <%= @user.crypted_password %>
-</p>
+  <strong>Shopify Response</strong><br /><br />
 
-<p>
-  <strong>Salt:</strong>
-  <%= @user.salt %>
+  <% @products.each do |p| %>
+    <%= p.title %><br />
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
