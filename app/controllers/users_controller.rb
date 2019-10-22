@@ -70,6 +70,27 @@ class UsersController < ApplicationController
     end
   end
 
+
+
+  def update_product
+    shop_url = "https://4cb3f19f1ae75c7cd1fc13d7c05ab3a7:1f0528e7a92aa512798c2606e3e995b3@happy-hq-test.myshopify.com"
+    ShopifyAPI::Base.site = shop_url
+    ShopifyAPI::Base.api_version = '2019-10'
+
+    product = ShopifyAPI::Product.find(params[:product_id])
+
+    product.title = 'Updated it!'
+
+    if product.save
+      redirect_to(user_path(current_user.id), notice: 'Product was successfully updated')
+    else
+      redirect_to(user_path(current_user.id), notice: 'Product update failed')
+    end
+  end
+
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

@@ -4,8 +4,17 @@
   <%= @user.email %>
 </p>
 
+<h2>Update product</h2>
+<%= form_for :product, url: product_update_path, method: :post do |form| %>
+  Form contents
+
+  <%= select_tag :product_id, options_from_collection_for_select(@products, :id, :title) %>
+
+  <%= form.submit %>
+<% end %>
+
 <p>
-  <strong>Shopify Response</strong><br /><br />
+  <strong>Shopify Response</strong><br />
 
   <% @products.each do |p| %>
     <%= p.title %><br />
