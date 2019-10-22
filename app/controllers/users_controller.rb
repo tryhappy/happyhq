@@ -12,12 +12,17 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    shop_url = "https://4cb3f19f1ae75c7cd1fc13d7c05ab3a7:1f0528e7a92aa512798c2606e3e995b3@happy-hq-test.myshopify.com"
-    ShopifyAPI::Base.site = shop_url
-    ShopifyAPI::Base.api_version = '2019-10'
 
-    @products = ShopifyAPI::Product.find(:all)
+    if @user.shopify_api_key
+      shop_url = "https://#{@user.shopify_api_key}:#{@user.shopify_password}@#{@user.shopify_url}"
+      ShopifyAPI::Base.site = shop_url
+      ShopifyAPI::Base.api_version = '2019-10'
 
+      @products = ShopifyAPI::Product.find(:all)
+
+      # ShopifyAPI::Base.clear_session
+
+    end
   end
 
   # GET /users/new
@@ -99,6 +104,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-       params.require(:user).permit(:email, :password, :password_confirmation)
+       params.require(:user).permit(:email, :password, :password_confirmation, :shopify_url, :shopify_api_key, :shopify_password)
     end
 end
