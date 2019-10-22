@@ -8,7 +8,7 @@
   <h2>Update product</h2>
   <%= form_for :product, url: product_update_path, method: :post do |form| %>
     Form contents
-
+    <%= hidden_field_tag(:user_id, @user.id) %>
     <%= select_tag :product_id, options_from_collection_for_select(@products, :id, :title) %>
 
     <%= form.submit %>

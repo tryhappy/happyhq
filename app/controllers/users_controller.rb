@@ -78,7 +78,8 @@ class UsersController < ApplicationController
 
 
   def update_product
-    shop_url = "https://4cb3f19f1ae75c7cd1fc13d7c05ab3a7:1f0528e7a92aa512798c2606e3e995b3@happy-hq-test.myshopify.com"
+    @user = User.find(params[:user_id])
+    shop_url = "https://#{@user.shopify_api_key}:#{@user.shopify_password}@#{@user.shopify_url}"
     ShopifyAPI::Base.site = shop_url
     ShopifyAPI::Base.api_version = '2019-10'
 
@@ -87,9 +88,9 @@ class UsersController < ApplicationController
     product.title = 'Updated it!'
 
     if product.save
-      redirect_to(user_path(current_user.id), notice: 'Product was successfully updated')
+      redirect_to(user_path(@user), notice: 'Product was successfully updated')
     else
-      redirect_to(user_path(current_user.id), notice: 'Product update failed')
+      redirect_to(user_path(@user), notice: 'Product update failed')
     end
   end
 
