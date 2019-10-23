@@ -1,4 +1,4 @@
-<h1 class="headline">New Task</h1>
+<h1 class="text-5xl pl-4 mb-4 font-bold uppercase">New Task</h1>
 <%= form_with(model: @task, local: true) do |form| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
@@ -12,23 +12,79 @@
     </div>
   <% end %>
 
-<div class="task-hold">
-  <h2>1. Trigger</h2>
-  <div class="grid-hold">
-
-    <div class="grid-item item1of4">
-      <h3>Perform Now</h3>
+<div class="container mx-auto px-4">
+  <h2 class="text-2xl mb-4">1. Trigger</h2>
+  <div class="flex mb-12 content-start flex-wrap justify-start -m-2">
+    <div class="w-1/6 p-2 ">
+      <div class="min-h-task-item shadow-task-item py-4 rounded-lg border-black border-2 bg-white flex justify-center flex-col text-center">
+        <h3>Perform Now</h3>
+      </div>
     </div>
-    <div class="grid-item item1of4">
-      <h3>Schedule</br>Date/Time</h3>
+    <div class="w-1/6 p-2 ">
+      <div class="min-h-task-item shadow-task-item py-4 rounded-lg border-black border-2 bg-white flex justify-center flex-col text-center">
+        <h3>Schedule</br>Date/Time</h3>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="text-2xl mb-4">2. Item(s)</h2>
+  <div class="flex mb-12 content-start flex-wrap justify-start -m-2">
+    <div class="w-1/6 p-2 ">
+      <div class="min-h-task-item shadow-task-item py-4 rounded-lg border-black border-2 bg-white flex justify-center flex-col text-center">
+        <h3>Products</h3>
+      </div>
+    </div>
+    <div class="w-1/6 p-2 ">
+      <div class="min-h-task-item shadow-task-item py-4 rounded-lg border-black border-2 bg-white flex justify-center flex-col text-center">
+        <h3>Collections</h3>
+      </div>
+    </div>
+    <div class="w-1/6 p-2 ">
+      <div class="min-h-task-item shadow-task-item py-4 rounded-lg border-black border-2 bg-white flex justify-center flex-col text-center">
+        <h3>Site Elements</h3>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="text-2xl mb-4">3. Action</h2>
+  <div class="flex mb-12 content-start flex-wrap justify-start -m-2">
+    <div class="w-1/6 p-2 ">
+      <div class="min-h-task-item shadow-task-item py-4 rounded-lg border-black border-2 bg-white flex justify-center flex-col text-center">
+        <h3>Change Name</h3>
+      </div>
+    </div>
+    <div class="w-1/6 p-2 ">
+      <div class="min-h-task-item shadow-task-item py-4 rounded-lg border-black border-2 bg-white flex justify-center flex-col text-center">
+        <h3>Change Price</h3>
+      </div>
+    </div>
+    <div class="w-1/6 p-2 ">
+      <div class="min-h-task-item shadow-task-item py-4 rounded-lg border-black border-2 bg-white flex justify-center flex-col text-center">
+        <h3>Add/Remove Tag</h3>
+      </div>
+    </div>
+    <div class="w-1/6 p-2 ">
+      <div class="min-h-task-item shadow-task-item py-4 rounded-lg border-black border-2 bg-white flex justify-center flex-col text-center">
+        <h3>Add to</br>Collection</h3>
+      </div>
+    </div>
+    <div class="w-1/6 p-2 ">
+      <div class="min-h-task-item shadow-task-item py-4 rounded-lg border-black border-2 bg-white flex justify-center flex-col text-center">
+        <h3>Adjust Inventory</h3>
+      </div>
+    </div>
+    <div class="w-1/6 p-2 ">
+      <div class="min-h-task-item shadow-task-item py-4 rounded-lg border-black border-2 bg-white flex justify-center flex-col text-center">
+        <h3>Add/Remove Tag</h3>
+      </div>
+    </div>
+    <div class="w-1/6 p-2 ">
+      <div class="min-h-task-item shadow-task-item py-4 rounded-lg border-black border-2 bg-white flex justify-center flex-col text-center">
+        <h3>Add to</br>Collection</h3>
+      </div>
     </div>
 
   </div>
-
-  <h2>2. Item(s)</h2>
-
-  <h2>3. Action</h2>
-
 
 
 

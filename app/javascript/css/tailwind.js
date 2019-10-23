@@ -17,6 +17,12 @@ module.exports = {
       spacing: {
         '96': '24rem',
         '128': '32rem',
+      },
+      minHeight: {
+        'task-item': '84px',
+      },
+      boxShadow: {
+        'task-item': '0px 4px 10px rgba(0, 0, 0, 0.25);'
       }
     }
   },

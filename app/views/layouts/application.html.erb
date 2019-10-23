@@ -12,19 +12,28 @@
 
   <body>
 
-  <nav>
-    <h2>Happy HQ</h2>
-    <div id="profile-nav">
-    <% if current_user %>
-      <%= link_to "Your Tasks", tasks_path %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-      <%= link_to "Logout", :logout, method: :post %>
-    <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %>
-    <% end %>
+<nav class="flex items-center justify-between flex-wrap px-4 pt-4">
+  <div class="flex items-center flex-shrink-0 mr-6">
+    <span class="text-l tracking-tight">Happy HQ</span>
+  </div>
+  <div class="w-full block flex-grow text-right lg:flex lg:items-center lg:w-auto">
+    <div class="text-sm lg:flex-grow">
+      <% if current_user %>
+        <%= link_to "Your Tasks", tasks_path, :class => "block mt-4 lg:inline-block lg:mt-0 hover:text-pink-600 mr-4" %>
+        <%= link_to "Edit Profile", edit_user_path(current_user.id), :class => "block mt-4 lg:inline-block lg:mt-0 hover:text-pink-600 mr-4" %>
+        <%= link_to "Logout", :logout, method: :post, :class => "block mt-4 lg:inline-block lg:mt-0 hover:text-pink-600 mr-4" %>
+      <% else %>
+        <%= link_to "Register", new_user_path, :class => "block mt-4 lg:inline-block lg:mt-0 hover:text-pink-600 mr-4" %> |
+        <%= link_to "Login", :login, :class => "block mt-4 lg:inline-block lg:mt-0 hover:text-pink-600 mr-4" %>
+      <% end %>
+
     </div>
-  </nav>
+    <div>
+      <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Download</a>
+    </div>
+  </div>
+</nav>
+
   <!-- <div>
     <p id="notice"><%= flash[:notice] %></p>
     <p id="alert"><%= flash[:alert] %></p>
