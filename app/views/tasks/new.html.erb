@@ -1,5 +1,77 @@
-<h1>New Task</h1>
+<h1 class="headline">New Task</h1>
+<%= form_with(model: @task, local: true) do |form| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
-<%= render 'form', task: @task %>
+      <ul>
+        <% @task.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<%= link_to 'Back', tasks_path %>
+<div class="task-hold">
+  <h2>1. Trigger</h2>
+  <div class="grid-hold">
+
+    <div class="grid-item item1of4">
+      <h3>Perform Now</h3>
+    </div>
+    <div class="grid-item item1of4">
+      <h3>Schedule</br>Date/Time</h3>
+    </div>
+
+  </div>
+
+  <h2>2. Item(s)</h2>
+
+  <h2>3. Action</h2>
+
+
+
+
+
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :object_type %>
+    <%= form.text_field :object_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :object_id %>
+    <%= form.text_field :object_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :instructions %>
+    <%= form.text_field :instructions %>
+  </div>
+
+  <div class="field">
+    <%= form.label :instruction_value %>
+    <%= form.text_field :instruction_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :execute_on %>
+    <%= form.datetime_select :execute_on %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+</div>

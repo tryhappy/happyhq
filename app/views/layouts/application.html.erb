@@ -11,7 +11,9 @@
 
   <body>
 
-  <div id="nav">
+  <nav>
+    <h2>Happy HQ</h2>
+    <div id="profile-nav">
     <% if current_user %>
       <%= link_to "Your Tasks", tasks_path %>
       <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
@@ -20,11 +22,12 @@
       <%= link_to "Register", new_user_path %> |
       <%= link_to "Login", :login %>
     <% end %>
-  </div>
-  <div>
+    </div>
+  </nav>
+  <!-- <div>
     <p id="notice"><%= flash[:notice] %></p>
     <p id="alert"><%= flash[:alert] %></p>
-  </div>
+  </div> -->
     <%= yield %>
   </body>
 </html>
