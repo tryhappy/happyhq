@@ -13,9 +13,9 @@
   <% end %>
 
 <div class="container mx-auto px-4">
-  <h2 class="text-2xl mb-4">(1) Trigger</h2>
+  <h2 class="text-2xl mb-4">Trigger</h2>
   <div class="flex mb-12 content-start flex-wrap justify-start -m-2">
-    <div class="w-1/6 p-2 ">
+    <div class="w-1/6 p-2">
       <div class="min-h-task-item shadow-task-item py-4 rounded-lg border-black border-2 bg-white flex justify-center flex-col text-center">
         <h3>Perform Now</h3>
       </div>
@@ -26,9 +26,46 @@
       </div>
     </div>
   </div>
-
-  <h2 class="text-2xl mb-4">(2) Item</h2>
+  <h2 class="text-2xl mb-4">Item</h2>
   <div class="flex mb-12 content-start flex-wrap justify-start -m-2">
+    <div class="w-full p-2">
+      <div class="min-h-task-item shadow-task-item py-4 rounded-lg border-black border-2 bg-white flex justify-center flex-col text-center">
+        <div class="px-4 pb-4 border-b-2 border-black">
+        <h3 class="text-left font-bold tracking-wide">All Products</h3>
+        </div>
+        <div class="flex content-start flex-wrap justify-start p-2 overflow-y-scroll" style="height: 600px;">
+
+          <% if @products %>
+            <% @products.each do |p| %>
+              <div class="w-1/6 p-2">
+                <div class="min-h-product-item border-gray-400 border-2 bg-white">
+                  <img class="p-2 my-2" src="<%= p.images.first.src %>">
+                  <h3 class="p-2 text-sm"><%= p.title.truncate(50) %></h3>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+    <div class="w-1/6 p-2 ">
+      <div class="min-h-task-item shadow-task-item py-4 rounded-lg border-black border-2 bg-white flex justify-center flex-col text-center">
+        <h3>Collections</h3>
+      </div>
+    </div>
+    <div class="w-1/6 p-2 ">
+      <div class="min-h-task-item shadow-task-item py-4 rounded-lg border-black border-2 bg-white flex justify-center flex-col text-center">
+        <h3>Site Elements</h3>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="flex mb-12 content-start flex-wrap justify-start -m-2">
     <div class="w-1/6 p-2 ">
       <div class="min-h-task-item shadow-task-item py-4 rounded-lg border-black border-2 bg-white flex justify-center flex-col text-center">
         <h3>Products</h3>
@@ -44,9 +81,9 @@
         <h3>Site Elements</h3>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <h2 class="text-2xl mb-4">(3) Action</h2>
+  <h2 class="text-2xl mb-4">Action</h2>
   <div class="flex mb-12 content-start flex-wrap justify-start -m-2">
     <div class="w-1/6 p-2 ">
       <div class="min-h-task-item shadow-task-item py-4 rounded-lg border-black border-2 bg-white flex justify-center flex-col text-center">

@@ -16,6 +16,16 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = current_user.tasks.build()
+    if current_user.shopify_api_key
+      shop_url = "https://#{current_user.shopify_api_key}:#{current_user.shopify_password}@#{current_user.shopify_url}"
+      ShopifyAPI::Base.site = shop_url
+      ShopifyAPI::Base.api_version = '2019-10'
+
+      @products = ShopifyAPI::Product.find(:all)
+
+      # ShopifyAPI::Base.clear_session
+
+    end
   end
 
   # GET /tasks/1/edit

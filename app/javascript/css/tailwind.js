@@ -20,6 +20,7 @@ module.exports = {
       },
       minHeight: {
         'task-item': '84px',
+        'product-item': '225px'
       },
       boxShadow: {
         'task-item': '0px 4px 10px rgba(0, 0, 0, 0.25);'
