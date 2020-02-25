@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  master_url: MyString
+  user: one
+  forward_url: MyString
+  load_count: 1
+  notes: 
+
+two:
+  master_url: MyString
+  user: two
+  forward_url: MyString
+  load_count: 1
+  notes: 

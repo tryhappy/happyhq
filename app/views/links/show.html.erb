@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Master url:</strong>
+  <%= @link.master_url %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @link.user_id %>
+</p>
+
+<p>
+  <strong>Forward url:</strong>
+  <%= @link.forward_url %>
+</p>
+
+<p>
+  <strong>Load count:</strong>
+  <%= @link.load_count %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @link.notes %>
+</p>
+
+<%= link_to 'Edit', edit_link_path(@link) %> |
+<%= link_to 'Back', links_path %>
