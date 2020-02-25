@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :links
   resources :tasks
   root :to => 'users#index'
   resources :user_sessions
