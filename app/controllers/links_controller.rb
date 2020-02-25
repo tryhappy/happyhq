@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
+  skip_before_action :require_login, only: [:show]
 
   # GET /links
   # GET /links.json
